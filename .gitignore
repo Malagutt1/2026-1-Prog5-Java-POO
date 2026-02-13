@@ -1,0 +1,15 @@
+# Compilados (Pasta onde o Eclipse joga os .class)
+bin/
+build/
+target/
+.project
+
+# Metadados do Workspace (Configurações da sua IDE local)
+.metadata/
+.recommenders/
+.settings/
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.bak
