@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="AULAS/Circulo/src"/>
+	<classpathentry kind="src" path="AULAS/OlaMundo/src"/>
+	<classpathentry excluding="Ex_condicao/src/|Ex_repeticao/src/" kind="src" path="EXERCICIOS"/>
+	<classpathentry kind="src" path="EXERCICIOS/Ex_condicao/src"/>
+	<classpathentry kind="src" path="EXERCICIOS/Ex_repeticao/src"/>
+	<classpathentry kind="output" path="AULAS/Circulo/bin"/>
+</classpath>
