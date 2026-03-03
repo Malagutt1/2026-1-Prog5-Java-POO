@@ -1,5 +1,6 @@
 // Crie a classe alguno com
 // nome e matricula
+package Aluno;
 public class Aluno {
 	private String nome;
 	private int matricula;

@@ -1,3 +1,4 @@
+package ContaCorrente;
 public class ContaCorrente {
     private int agencia;
     private int contaCorrente;
@@ -44,6 +45,19 @@ public class ContaCorrente {
             System.out.println("Saque realizado! Saldo atual: " + saldo);
         } else {
             System.out.println("Saldo insuficiente ou valor inválido!");
+        }
+    }
+    
+    public void transferir(ContaCorrente c, float transf) {
+        if (transf > 0 && saldo >= transf) {
+            this.saldo -= (int) transf;
+            c.saldo += (int) transf;
+            System.out.println("Transferência realizada com sucesso!");
+            System.out.println("Saldo atual: " + saldo);
+        } else if (transf <= 0) {
+            System.out.println("Valor inválido! A transferência deve ser maior que zero.");
+        } else {
+            System.out.println("Saldo insuficiente para realizar a transferência!");
         }
     }
 
