@@ -1,3 +1,4 @@
+package Ex_repeticao;
 import java.util.Scanner;
 
 public class Ex_Revisao_Repeticao {

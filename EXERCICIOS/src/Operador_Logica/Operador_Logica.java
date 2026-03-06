@@ -1,7 +1,9 @@
+package Operador_Logica;
 import java.util.Scanner;
-public class exercicios {
+
+public class Operador_Logica {
 	public static void main(String[] args) {
-		//ex1();
+		ex1();
 		//ex2();
 		//ex3();
 		//ex4();
