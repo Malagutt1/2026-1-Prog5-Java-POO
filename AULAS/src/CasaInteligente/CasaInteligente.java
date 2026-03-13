@@ -46,14 +46,14 @@ public class CasaInteligente {
     public void setModoSeguranca(boolean modoSeguranca) { 
     	this.modoSeguranca = modoSeguranca; }
 
-
+    // ligar casa
     public void ligarCasa() {
         this.luzesLigadas = true;
-        this.temperaturaAr = 22;
         this.modoSeguranca = false;
         System.out.println("Bem-vindo de volta! Casa " + nomeMoradia + " configurada.");
     }
 
+    // desligar casa
     public void desligarCasa() {
         this.luzesLigadas = false;
         this.temperaturaAr = 26;
@@ -61,11 +61,33 @@ public class CasaInteligente {
         System.out.println("Saindo... Modo segurança ativado.");
     }
 
+    // ligar todas as luzes
+    public void ligarTodasLuzes() {
+        this.luzesLigadas = true;
+        System.out.println("Todas as luzes foram ligadas.");
+    }
+
+    // modo cinema
     public void ativarModoCinema() {
         if (luzesLigadas) {
             this.luzesLigadas = false;
             this.temperaturaAr = 21;
-            System.out.println("Pipoca pronta! Modo Cinema ativado em: " + nomeMoradia);
+            System.out.println("Modo cinema ativado!");
+        } 
+        else {
+            System.out.println("Ligue as luzes primeiro para ativar o modo cinema.");
         }
     }
+
+    // mostrar status
+    public void mostrarStatus() {
+
+        System.out.println("\n------ STATUS DA CASA ------");
+        System.out.println("Moradia: " + nomeMoradia);
+        System.out.println("Luzes: " + (luzesLigadas ? "Ligadas" : "Desligadas"));
+        System.out.println("Temperatura: " + temperaturaAr + "°C");
+        System.out.println("Modo Segurança: " + (modoSeguranca ? "Ativo" : "Inativo"));
+        System.out.println("-----------------------------");
+    }
+
 }
