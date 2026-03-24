@@ -1,0 +1,66 @@
+Questão 1: Complete o código da classe ContaBancaria com os atributos numero e saldo.
+public class ContaBancaria {
+ 	private int numero;
+	private double saldo;
+}
+Questão 2: Complete o código do construtor da classe ContaBancaria que inicializa os atributos numero e
+saldo.
+public ContaBancaria(int numero, double saldo) {
+    this.numero = numero;
+    this.saldo = saldo;
+}
+Questão 3: Complete o código do método depositar que adiciona um valor ao saldo da conta.
+public void depositar(double valor) {
+    if (valor > 0) {
+        this.saldo += valor;
+    }
+}
+Questão 4: Complete o código do método sacar que subtrai um valor do saldo da conta, se o saldo for
+suficiente.
+public void sacar(double valor) {
+    if (valor > 0 && saldo >= valor) {
+        this.saldo -= valor;
+    } else {
+        System.out.println("Saldo insuficiente!");
+    }
+}
+Questão 5: Crie o código do método getSaldo que retorna o saldo da conta.
+public double getSaldo() {
+    return saldo;
+}
+
+Questão 6: Crie o código do método setSaldo que seta o saldo da conta.
+public void setSaldo(double saldo) {
+    this.saldo = saldo;
+}
+Questão 7: Complete o código da sobrecarga do construtor da classe ContaBancaria que inicializa apenas o
+atributo numero e deixa o saldo em 0.
+public ContaBancaria(int numero) {
+    this.numero = numero;
+    this.saldo = 0.0;
+}
+Questão 8: Complete o código da classe ContaBancaria com um método main que cria uma conta bancária
+e realiza algumas operações.
+public static void main(String[] args) {
+    ContaBancaria conta = new ContaBancaria(123, 100);
+    conta.depositar(50);
+    conta.sacar(30);
+    System.out.println(conta.getSaldo());
+}
+Questão 9: Complete o código da classe ContaBancaria com um construtor sem parâmetros que inicializa os
+atributos com valores padrão.
+public ContaBancaria() {
+    this.numero = 0;
+    this.saldo = 0.0;
+}
+Questão 10: U3lize cada um dos construtores criados anteriormente e na main os u3lize, e realize algumas
+operações em um dos objetos criados.
+public static void main(String[] args) {
+    ContaBancaria conta1 = new ContaBancaria();
+    conta1.setSaldo(100);
+    ContaBancaria conta2 = new ContaBancaria(123, 200);
+    ContaBancaria conta3 = new ContaBancaria(456);
+    conta2.depositar(50);
+    conta2.sacar(100);
+    System.out.println(conta2.getSaldo());
+}
