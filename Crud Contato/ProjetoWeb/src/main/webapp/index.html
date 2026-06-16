@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Contatos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-gradient: linear-gradient(135deg, #FFB800 0%, #FF5C00 100%);
+            --bg-global: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-global);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(255, 184, 0, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 92, 0, 0.05) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: var(--text-main);
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Grid de Opções */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* Estilo do Card */
+        .menu-card {
+            background: var(--card-bg);
+            text-decoration: none;
+            padding: 32px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 
+                        0 0 0 1px rgba(15, 23, 42, 0.03);
+            border: 2px solid transparent;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            border-color: #FFB800;
+            box-shadow: 0 20px 40px -12px rgba(255, 92, 0, 0.15);
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: var(--bg-global);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover .icon-box {
+            background: var(--brand-gradient);
+        }
+
+        .icon-box svg {
+            width: 28px;
+            height: 28px;
+            color: #FF5C00;
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover .icon-box svg {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .menu-card h2 {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .menu-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Cores específicas para dar vida */
+        .card-create:hover { border-color: #10B981; } /* Verde */
+        .card-search:hover { border-color: #3B82F6; } /* Azul */
+        .card-update:hover { border-color: #F59E0B; } /* Amarelo */
+        .card-delete:hover { border-color: #EF4444; } /* Vermelho */
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Gerenciador de Contatos</h1>
+        <p>Selecione uma operação para começar</p>
+    </div>
+
+    <div class="grid-container">
+        
+        <a href="cadastro.html" class="menu-card card-create">
+            <div class="icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>Cadastrar</h2>
+            <p>Adicionar novos contatos ao sistema com nome e telefone.</p>
+        </a>
+
+        <a href="pesquisar.html" class="menu-card card-search">
+            <div class="icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>Pesquisar</h2>
+            <p>Localize contatos rapidamente através do nome ou ID.</p>
+        </a>
+
+        <a href="atualizar.html" class="menu-card card-update">
+            <div class="icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>Atualizar</h2>
+            <p>Editar informações de um contato já existente.</p>
+        </a>
+
+        <a href="excluir.html" class="menu-card card-delete">
+            <div class="icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>Excluir</h2>
+            <p>Remover contatos permanentemente da base de dados.</p>
+        </a>
+
+    </div>
+
+</body>
+</html>

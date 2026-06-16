@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Contato | Contatos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-gradient: linear-gradient(135deg, #FF8C00 0%, #E63946 100%);
+            --brand-orange: #FF5C00;
+            --brand-danger: #E63946;
+            --bg-global: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --input-bg: #F1F5F9;
+            --input-border-focus: #E63946;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            background-color: var(--bg-global);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(255, 140, 0, 0.07) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(230, 57, 70, 0.05) 0px, transparent 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 440px;
+            perspective: 1000px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 40px 32px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 
+                        0 0 0 1px rgba(15, 23, 42, 0.04);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .logo-badge {
+            width: 48px;
+            height: 48px;
+            background: var(--brand-gradient);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 16px rgba(230, 57, 70, 0.2);
+        }
+        .logo-badge svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: white;
+        }
+        h1 {
+            color: var(--text-main);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-main);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-wrapper svg {
+            position: absolute;
+            left: 16px;
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: color 0.2s;
+            pointer-events: none;
+        }
+        .input-wrapper input {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            background-color: var(--input-bg);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+        .input-wrapper input::placeholder {
+            color: #94A3B8;
+        }
+        .input-wrapper input:focus {
+            background-color: #FFFFFF;
+            border-color: var(--input-border-focus);
+            box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.15);
+            outline: none;
+        }
+        .input-wrapper input:focus ~ svg {
+            color: var(--brand-danger);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--brand-gradient);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px -6px rgba(230, 57, 70, 0.3);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 12px;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 12px 24px -4px rgba(230, 57, 70, 0.4);
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+        .btn-submit:active {
+            transform: translateY(1px);
+            box-shadow: 0 6px 12px -4px rgba(230, 57, 70, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="logo-badge">
+                    <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <h1>Consultar Contato</h1>
+                <p>Busque as informações de um contato pelo nome</p>
+            </div>
+            
+            <form method="post" action="PesquisarServlet">
+                <div class="form-group">
+                    <label for="nomeBusca">Nome para Busca</label>
+                    <div class="input-wrapper">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <input type="text" id="nomeBusca" name="txNomeBusca" placeholder="Ex: Kauã" required autocomplete="off">
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Localizar Registro</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
